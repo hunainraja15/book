@@ -23,8 +23,12 @@ Route::post('/book/store', [BookController::class, 'store'])->name('book.store')
 
 
 
-
 Route::get('/sport', [SportController::class, 'index'])->name('sport.index');
+Route::post('/sport/massage/{userId?}', [SportController::class, 'storeMessage'])->name('message.store');
+
+// New route to show a specific user's chat for admins
+Route::get('/sport/user/{user}', [SportController::class, 'showUserChat'])->name('sport.user.chat');
+
 
 
 Route::get('/user', [UserController::class, 'index'])->name('user.index');
